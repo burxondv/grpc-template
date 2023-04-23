@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package protos;
+
+option go_package = "protos/";
+
+service UserManagement {
+    rpc CreateNewUser(UserRequest) returns (UserResponse) {}
+
+}
+
+message UserRequest {
+    string name = 1;
+    int32 age = 2;
+}
+
+message UserResponse {
+    string name = 1;
+    int32 age = 2;
+    int32 id = 3;
+}
